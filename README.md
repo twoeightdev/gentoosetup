@@ -122,6 +122,9 @@
 
 
 - set hostname in nvim etc/conf.d/hostname
+```
+hostname="gentoo"
+```
 - emerge --ask --noreplace net-misc/netifrc
 - nvim /etc/conf.d/net
 - set to config_enp0s31f6="dhcp"
@@ -129,6 +132,11 @@
 - cd /etc/init.d
 - ln -s net.lo net.enp0s31f6
 - rc-update add net.enp0s31f6 default
+- vim /etc/hosts
+```
+127.0.0.1 gentoo.homenetwork gentoo localhost
+::1       gentoo.homenetwork gentoo localhost
+```
 
 ### Fstab and Bootloader
 - get UUID blkid -s UUID -o value /dev/sdb2
